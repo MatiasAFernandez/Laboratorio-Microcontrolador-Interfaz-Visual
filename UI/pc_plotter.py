@@ -305,14 +305,10 @@ class PlotterApp(QWidget):
                 self.line1.set_data(x_data, y1_data)
                 self.line2.set_data(x_data, y2_data)
                 
-                # Actualizar ventana de tiempo: ÚLTIMOS 20 SEGUNDOS (MAX_POINTS * 0.1s = 20s)
+                # Actualizar ventana de tiempo: Asegurar que la línea toque el extremo izquierdo
                 if len(x_data) > 0:
-                    current_graph = x_data[-1]
-                    time_window_s = MAX_POINTS * interval_s # 20.0 segundos
-                    
-                    # El extremo izquierdo debe ser el inicio de la ventana de 20s
-                    xmin = max(0.0, current_graph - time_window_s)
-                    xmax = current_graph + interval_s * 2 # Pequeño margen
+                    xmin = x_data[0]
+                    xmax = x_data[-1] + interval_s * 2  # Pequeño margen
                     
                     self.ax1.set_xlim(xmin, xmax)
                     self.ax2.set_xlim(xmin, xmax)
