@@ -14,10 +14,10 @@ import wifi
 import socketpool
 import adafruit_minimqtt.adafruit_minimqtt as MQTT
 
-# Configuración de RED 
-# SSID = "wfrre-Docentes"
-# PASSWORD = "20$tscFrre.24"
-# BROKER = "10.13.100.154" 
+# Configuración de RED (COMENTADO PARA EJECUTARLO SIN PUBLICAR AL MAESTRO)
+# SSID = "NOMBRE_DE_LA_RED"
+# PASSWORD = "CONTRASEÑA_DE_LA_RED"
+# BROKER = "IP_DEL_MAESTRO" 
 # NOMBRE_EQUIPO = "automatas"
 # DESCOVERY_TOPIC = "descubrir"
 # TOPIC = f"sensores/{NOMBRE_EQUIPO}"
@@ -475,6 +475,6 @@ while True:
         print(output_data)
         last_log = now
         
-#         publish()
+#         publish() (DESCOMENTAR)
 
     time.sleep(0.01)
