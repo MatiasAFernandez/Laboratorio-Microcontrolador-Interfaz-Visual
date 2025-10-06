@@ -476,6 +476,6 @@ while True:
         print(output_data)
         last_log = now
         
-         publish()
+        publish()
 
     time.sleep(0.01)
